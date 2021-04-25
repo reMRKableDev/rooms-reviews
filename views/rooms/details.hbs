@@ -1,0 +1,27 @@
+<section>
+  <h1>The details of the room : {{roomResult.name}}</h1>
+  <p>{{roomResult.description}}</p>
+
+  <br>
+
+  {{#if roomResult.isOwner}}
+  <a href="/rooms/{{roomResult.id}}/edit">Edit</a>
+
+  <hr>
+  {{/if}}
+
+  {{#unless roomResult.isOwner}}
+  <div>
+    <h3>Add a review:</h3>
+
+    <form action="/rooms/{{roomResult.id}}/add-review" method="post">
+      <textarea name="review" cols="30" rows="10"></textarea>
+      <button type="submit">Add Review</button>
+    </form>
+
+  </div>
+  {{/unless}}
+
+
+
+</section>

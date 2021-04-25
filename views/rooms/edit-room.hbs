@@ -1,0 +1,22 @@
+<section>
+  <h2>Edit Room</h2>
+
+  <form action="/rooms/{{roomResult.id}}/edit" method="POST" id="form-container">
+
+    <div>
+      <label for="name">Room Name</label>
+      <input id="name" type="text" name="name" value="{{roomResult.name}}">
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" name="description" id="description" cols="30"
+        rows="10">{{roomResult.description}}</textarea>
+    </div>
+
+
+    <button>Edit Room</button>
+
+
+  </form>
+</section>

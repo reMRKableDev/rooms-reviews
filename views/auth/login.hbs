@@ -1,0 +1,35 @@
+<h2>Login</h2>
+
+<form action="/login" method="POST" id="form-container">
+  <div>
+    <label for="email">Username</label>
+    <input id="email" type="email" name="email" required>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" required>
+  </div>
+
+  {{#if message}}
+  <div class="error-message">
+    {{#each message}}
+    <p>{{this}}</p>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  <div>
+    <a href="/auth/google">Login With Google</a>
+  </div>
+
+  <div>
+    <button>Login</button>
+  </div>
+
+  <p class="account-message">
+    Sign Up?
+    <a href="/signup">Sign Up</a>
+  </p>
+
+</form>

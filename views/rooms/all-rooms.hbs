@@ -1,0 +1,40 @@
+<section>
+  <h1>All Rooms </h1>
+  {{#each rooms}}
+  <article>
+    <h2>{{name}}</h2>
+    <p>{{description}}</p>
+
+    <br>
+
+    <a href="/rooms/{{id}}">See Details</a>
+
+    {{#if isOwner}}
+    <a href="/rooms/{{id}}/edit">Edit Room</a>
+    <form action="/rooms/{{id}}/delete" method="post">
+      <button type="submit">Delete</button>
+    </form>
+    {{/if}}
+
+    {{#if reviews}}
+    <div>
+      <h3>All reviews for this room</h3>
+      <ul>
+        {{#each reviews}}
+        <li>
+          <div>
+            <p>{{this.review}}</p>
+            <p>Written by: {{this.user.fullName}}</p>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+      <hr>
+    </div>
+    {{else}}
+    <h3>There are no reviews for this room yet!</h3>
+    {{/if}}
+
+  </article>
+  {{/each}}
+</section>

@@ -1,6 +1,6 @@
 <h2>Create Room</h2>
 
-<form action="/create-room" method="POST" id="form-container">
+<form action="/create-room" method="POST" id="form-container" enctype="multipart/form-data">
 
   <div>
     <label for="name">Room Name</label>
@@ -9,9 +9,13 @@
 
   <div>
     <label for="description">Description</label>
-    <textarea id="description" name="description" id="" cols="30" rows="10" required></textarea>
+    <textarea id="description" name="description" id="" cols="30" rows="10" maxlength="200" required></textarea>
   </div>
 
+  <div>
+    <label for="upload">Upload Room Image</label>
+    <input type="file" name="imageUrl" id="upload">
+  </div>
 
   {{#if errorMessage}}
   <div class="error-message">{{errorMessage}}</div>

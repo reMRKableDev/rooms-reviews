@@ -56,7 +56,7 @@ app.locals.title = "Rooms App";
 
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth.routes"));
-app.use("/", require("./routes/reviews.routes"));
+app.use("/", isUserLoggedIn, require("./routes/reviews.routes"));
 app.use("/", isUserLoggedIn, require("./routes/user.routes"));
 app.use("/", isUserLoggedIn, require("./routes/room.routes"));
 

@@ -1,7 +1,7 @@
 <section>
   <h2>Edit Room</h2>
 
-  <form action="/rooms/{{roomResult.id}}/edit" method="POST" id="form-container">
+  <form action="/rooms/{{roomResult.id}}/edit" method="POST" id="form-container" enctype="multipart/form-data">
 
     <div>
       <label for="name">Room Name</label>
@@ -12,6 +12,12 @@
       <label for="description">Description</label>
       <textarea id="description" name="description" id="description" cols="30"
         rows="10">{{roomResult.description}}</textarea>
+    </div>
+
+    <div>
+      <img src="{{roomResult.imageUrl}}" alt="" width="200">
+      <label for="">Upload new image</label>
+      <input type="file" name="imageUrl" id="">
     </div>
 
 

@@ -5,6 +5,10 @@
     <h2>{{name}}</h2>
     <p>{{description}}</p>
 
+    <figure>
+      <img src="{{imageUrl}}" alt="room-image">
+    </figure>
+
     <br>
 
     <a href="/rooms/{{id}}">See Details</a>
@@ -16,6 +20,7 @@
     </form>
     {{/if}}
 
+
     {{#if reviews}}
     <div>
       <h3>All reviews for this room</h3>
@@ -24,7 +29,7 @@
         <li>
           <div>
             <p>{{this.review}}</p>
-            <p>Written by: {{this.user.fullName}}</p>
+            <p>Written by: <strong>{{this.user.fullName}}</strong></p>
           </div>
         </li>
         {{/each}}

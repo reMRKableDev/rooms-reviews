@@ -15,7 +15,7 @@
     <h3>Add a review:</h3>
 
     <form action="/rooms/{{roomResult.id}}/add-review" method="post">
-      <textarea name="review" cols="30" rows="10"></textarea>
+      <textarea name="review" cols="30" rows="10" maxlength="200" placeholder="Max 200 characters"></textarea>
       <button type="submit">Add Review</button>
     </form>
 

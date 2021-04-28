@@ -22,7 +22,6 @@ router.get("/rooms", (req, res, next) => {
       },
     })
     .then((allRoomsResults) => {
-      console.log(allRoomsResults[0].reviews[0].user);
       // Check if there is a user loggedIn
       if (req.user) {
         allRoomsResults.forEach((roomItem) => {

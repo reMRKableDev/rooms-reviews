@@ -73,6 +73,20 @@ router.post("/signup", (req, res, next) => {
     .catch((findErr) => next(findErr));
 });
 
+router.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+  })
+);
+router.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/profile",
+    failureRedirect: "/",
+  })
+);
+
 /* POST - logout */
 router.get("/logout", (req, res) => {
   // req.logout --> passport method to remove user from passport session and log out of app

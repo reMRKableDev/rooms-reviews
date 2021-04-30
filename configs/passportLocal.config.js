@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User.model");
 
 // Use & define local strategy
-const localStrategy = new LocalStrategy(
+module.exports = new LocalStrategy(
   {
     usernameField: "email",
     passwordField: "password",
@@ -36,5 +36,3 @@ const localStrategy = new LocalStrategy(
       .catch((findErr) => done(findErr));
   }
 );
-
-module.exports = localStrategy;

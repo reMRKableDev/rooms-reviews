@@ -10,6 +10,7 @@ const path = require("path");
 const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("./configs/passportLocal.config");
+const googleStrategy = require("./configs/passportGoogle.config");
 const isUserLoggedIn = require("./middleware/index");
 
 require("./configs/db.config");
@@ -35,6 +36,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 require("./configs/serialize.config");
 passport.use(localStrategy);
+passport.use(googleStrategy);
 
 // Express View engine setup
 
